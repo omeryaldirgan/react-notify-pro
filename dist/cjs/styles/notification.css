@@ -1,0 +1,120 @@
+/* Grup container'ı */
+.react-notification-group {
+  display: block;
+  position: fixed;
+  z-index: 5000;
+  /* width'i kaldırdık çünkü dinamik olarak gelecek */
+}
+
+/* Sağ taraf için */
+.react-notification-group[style*="right"] {
+  right: 8px;
+}
+
+/* Sol taraf için */
+.react-notification-group[style*="left"] {
+  left: 8px;
+}
+
+/* Center pozisyonu için */
+.react-notification-group[style*="transform: translateX(-50%)"] {
+  left: 50%;
+}
+
+/* Her bildirimin sarmalayıcısı */
+.notification-wrapper {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Bildirim başlığı */
+.notification-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  line-height: 1.2;
+}
+
+/* Bildirim kutusu stili */
+.react-notification {
+  /* width'i kaldırdık çünkü dinamik olarak style prop'u ile gelecek */
+  padding: 12px 15px 12px 10px;
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  color: #ffffff;
+  background: #44A4FC;
+  border-left: 5px solid #187FE7;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* Bildirim içeriği */
+.notification-content {
+  margin-top: 3px;
+  text-align: left;
+  line-height: 1.3;
+  font-size: 13px;
+}
+
+/* Türlere göre renk ayarları */
+.react-notification.warn {
+  background: #ffb648;
+  border-left-color: #f48a06;
+}
+
+.react-notification.error {
+  background: #E54D42;
+  border-left-color: #B82E24;
+}
+
+.react-notification.success {
+  background: #68CD86;
+  border-left-color: #42A85F;
+}
+
+/* Animasyonlar */
+.notification-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.notification-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 400ms;
+}
+
+.notification-exit {
+  opacity: 1;
+}
+
+.notification-exit-active {
+  opacity: 0;
+  transition-property: opacity;
+  transition-timing-function: ease-out;
+  transition-duration: 400ms;
+}
+
+/* Push efekti için */
+.react-notification {
+  transition-property: opacity;
+  transition-timing-function: ease-out;
+  transition-duration: 400ms;
+}
+
+.notification-enter + .react-notification {
+  transform: translateY(0);
+}
+
+.notification-enter-active + .react-notification {
+  transform: translateY(0);
+}

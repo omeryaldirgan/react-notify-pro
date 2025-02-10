@@ -1,0 +1,60 @@
+{
+  "name": "react-notification-pro",
+  "version": "1.0.14",
+  "description": "A lightweight, customizable, and animated notification system for React.",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "keywords": [
+    "react",
+    "notification",
+    "toast",
+    "alert",
+    "notify",
+    "popup",
+    "messages"
+  ],
+  "author": "Ömer Yaldırgan <omeryaldirgan@hotmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omeryaldirgan/react-notify-pro.git"
+  },
+  "homepage": "https://github.com/omeryaldirgan/react-notify-pro#readme",
+  "bugs": {
+    "url": "https://github.com/omeryaldirgan/react-notify-pro/issues"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build:cjs": "tsc --project tsconfig.json",
+    "build:esm": "tsc --project tsconfig.esm.json",
+    "copy-css": "mkdir -p dist/cjs/styles dist/esm/styles && cp src/styles/notification.css dist/cjs/styles/ && cp src/styles/notification.css dist/esm/styles/",
+    "build": "npm run clean && npm run build:cjs && npm run build:esm && npm run copy-css",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {
+    "dompurify": "^3.2.4",
+    "react-transition-group": "^4.4.2"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "dist/cjs/styles/notification.css",
+    "dist/esm/styles/notification.css"
+  ],
+  "devDependencies": {
+    "@types/dompurify": "^3.2.0",
+    "@types/node": "^22.13.1",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.7",
+    "@types/react-transition-group": "^4.4.12",
+    "typescript": "^5.2.2"
+  }
+}

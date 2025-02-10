@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                  
+    "module": "CommonJS",            
+    "declaration": true,              
+    "outDir": "./dist/cjs",           
+    "strict": true,                   
+    "jsx": "react",                   
+    "esModuleInterop": true,          
+    "skipLibCheck": true   ,
+    "lib": ["dom", "es2017"],
+    "resolveJsonModule": true,
+    "allowJs": true,       
+  },
+  "include": ["src", "src/components/**/*.css"]
+}

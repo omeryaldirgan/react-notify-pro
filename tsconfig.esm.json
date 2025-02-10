@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "target": "ES6",                 
+      "module": "ESNext",               
+      "declaration": true,              
+      "outDir": "./dist/esm",          
+      "strict": true,                   
+      "jsx": "react",                   
+      "esModuleInterop": true,          
+      "skipLibCheck": true,
+      "lib": ["es2017", "dom"]           
+    },
+    "include": ["src"]
+  }
