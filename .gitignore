@@ -3,7 +3,7 @@
 # dependencies
 node_modules/
 /node_modules
-example/node_modules
+demo/node_modules
 /.pnp
 .pnp.js
 
@@ -13,7 +13,7 @@ example/node_modules
 # production
 /build
 /dist
-example/build
+demo/build
 
 # misc
 .DS_Store

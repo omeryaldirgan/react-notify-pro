@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.links {
+  margin-bottom: 20px;
+}
+
+.link {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #3498db;
+}
+
+.section-title {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.success {
+  background: #2ecc71;
+}
+
+.warning {
+  background: #f39c12;
+}
+
+.error {
+  background: #e74c3c;
+}
+
+.custom-btn {
+  background: #1abc9c;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.fade-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+}
