@@ -1,5 +1,8 @@
+import '../utils/nextjs-check';
 import React, { createContext, useContext, useState } from 'react';
 import Notifications from './Notifications';
+// Client-side check
+const isClient = typeof window !== 'undefined';
 export const NotificationContext = createContext(undefined);
 export const useNotifications = () => {
     const context = useContext(NotificationContext);
@@ -10,6 +13,9 @@ export const useNotifications = () => {
 };
 export const NotificationProvider = ({ children }) => {
     const [notifications, setNotifications] = useState([]);
+    if (!isClient) {
+        return React.createElement(React.Fragment, null, children); // SSR için sadece children render
+    }
     const notify = (options) => {
         const id = Date.now();
         const notification = Object.assign(Object.assign({}, options), { id });

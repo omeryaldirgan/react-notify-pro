@@ -1,3 +1,4 @@
+import '../utils/nextjs-check';
 import { useContext } from 'react';
 import { NotificationContext } from './NotificationsProvider';
 const useNotification = () => {

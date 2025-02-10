@@ -1,5 +1,9 @@
+import '../utils/nextjs-check';
 import React, { createContext, useContext, useState } from 'react';
 import Notifications from './Notifications';
+
+// Client-side check
+const isClient = typeof window !== 'undefined';
 
 interface NotificationItem {
   id: number;
@@ -29,6 +33,10 @@ export const useNotifications = () => {
 
 export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [notifications, setNotifications] = useState<NotificationItem[]>([]);
+
+  if (!isClient) {
+    return <>{children}</>; // SSR için sadece children render
+  }
 
   const notify = (options: Omit<NotificationItem, 'id'>) => {
     const id = Date.now();

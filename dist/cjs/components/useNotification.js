@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+require("../utils/nextjs-check");
 const react_1 = require("react");
 const NotificationsProvider_1 = require("./NotificationsProvider");
 const useNotification = () => {

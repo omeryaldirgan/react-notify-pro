@@ -37,8 +37,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NotificationProvider = exports.useNotifications = exports.NotificationContext = void 0;
+require("../utils/nextjs-check");
 const react_1 = __importStar(require("react"));
 const Notifications_1 = __importDefault(require("./Notifications"));
+// Client-side check
+const isClient = typeof window !== 'undefined';
 exports.NotificationContext = (0, react_1.createContext)(undefined);
 const useNotifications = () => {
     const context = (0, react_1.useContext)(exports.NotificationContext);
@@ -50,6 +53,9 @@ const useNotifications = () => {
 exports.useNotifications = useNotifications;
 const NotificationProvider = ({ children }) => {
     const [notifications, setNotifications] = (0, react_1.useState)([]);
+    if (!isClient) {
+        return react_1.default.createElement(react_1.default.Fragment, null, children); // SSR için sadece children render
+    }
     const notify = (options) => {
         const id = Date.now();
         const notification = Object.assign(Object.assign({}, options), { id });

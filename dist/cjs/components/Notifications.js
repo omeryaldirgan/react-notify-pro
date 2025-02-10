@@ -3,10 +3,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+require("../utils/nextjs-check");
 const react_1 = __importDefault(require("react"));
 const react_transition_group_1 = require("react-transition-group");
 require("../styles/notification.css");
+// Client-side check
+const isClient = typeof window !== 'undefined';
 const Notifications = ({ notifications, onClose }) => {
+    if (!isClient) {
+        return null; // SSR için boş render
+    }
     const getPositionStyle = (position = 'top-right') => {
         switch (position) {
             case 'top-left':

@@ -10,5 +10,5 @@
       "skipLibCheck": true,
       "lib": ["es2017", "dom"]           
     },
-    "include": ["src"]
+    "include": ["src", "src/utils/**/*"]
   }

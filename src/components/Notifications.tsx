@@ -1,6 +1,10 @@
+import '../utils/nextjs-check';
 import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import '../styles/notification.css';
+
+// Client-side check
+const isClient = typeof window !== 'undefined';
 
 interface NotificationProps {
   id: number;
@@ -21,6 +25,10 @@ const Notifications: React.FC<NotificationsProps> = ({
   notifications,
   onClose
 }) => {
+  if (!isClient) {
+    return null; // SSR için boş render
+  }
+
   const getPositionStyle = (position: string = 'top-right') => {
     switch (position) {
       case 'top-left':

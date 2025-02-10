@@ -1,3 +1,4 @@
+import '../utils/nextjs-check';
 import React from 'react';
 interface NotificationItem {
     id: number;

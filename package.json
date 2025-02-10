@@ -1,6 +1,6 @@
 {
   "name": "react-notification-pro",
-  "version": "1.0.15",
+  "version": "1.0.18",
   "description": "A lightweight, customizable, and animated notification system for React.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -46,7 +46,9 @@
     "dist/",
     "README.md",
     "dist/cjs/styles/notification.css",
-    "dist/esm/styles/notification.css"
+    "dist/esm/styles/notification.css",
+    "dist/cjs/utils/",
+    "dist/esm/utils/"
   ],
   "devDependencies": {
     "@types/node": "^22.13.1",

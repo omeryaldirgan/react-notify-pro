@@ -1,3 +1,4 @@
+import '../utils/nextjs-check';
 import React from 'react';
 import '../styles/notification.css';
 interface NotificationProps {

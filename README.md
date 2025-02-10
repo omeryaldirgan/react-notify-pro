@@ -223,3 +223,47 @@ MIT © [Ömer YALDIRGAN](https://github.com/omeryaldirgan)
 - Suggest new features
 
 For detailed examples and documentation, visit our [GitHub repository](https://github.com/omeryaldirgan/react-notify-pro).
+
+## Next.js Usage (13+)
+
+When using with Next.js 13 or later, you need to mark your component as a client component by adding the 'use client' directive at the top of your file:
+
+```jsx
+'use client';
+
+import { NotificationProvider } from 'react-notification-pro';
+
+export default function Layout({ children }) {
+  return (
+    <NotificationProvider>
+      {children}
+    </NotificationProvider>
+  );
+}
+```
+
+Also, make sure to wrap the NotificationProvider in a client component:
+
+```jsx
+// app/providers.tsx
+'use client';
+
+import { NotificationProvider } from 'react-notification-pro';
+
+export function Providers({ children }) {
+  return <NotificationProvider>{children}</NotificationProvider>;
+}
+
+// app/layout.tsx
+import { Providers } from './providers';
+
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
+}
+```
