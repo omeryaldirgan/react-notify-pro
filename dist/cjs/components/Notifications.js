@@ -10,21 +10,21 @@ const Notifications = ({ notifications, onClose }) => {
     const getPositionStyle = (position = 'top-right') => {
         switch (position) {
             case 'top-left':
-                return { top: '20px', left: '20px' };
+                return { top: '16px', left: '16px' };
             case 'top-right':
-                return { top: '20px', right: '20px' };
+                return { top: '16px', right: '16px' };
             case 'bottom-left':
-                return { bottom: '20px', left: '20px' };
+                return { bottom: '16px', left: '16px' };
             case 'bottom-right':
-                return { bottom: '20px', right: '20px' };
+                return { bottom: '16px', right: '16px' };
             case 'center':
                 return {
-                    top: '20px',
+                    top: '16px',
                     left: '50%',
                     transform: 'translateX(-50%)'
                 };
             default:
-                return { top: '20px', right: '20px' };
+                return { top: '16px', right: '16px' };
         }
     };
     // Bildirimleri pozisyonlarına göre grupla

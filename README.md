@@ -1,6 +1,6 @@
 # React Notification Pro
 
-![Logo](https://raw.githubusercontent.com/omeryaldirgan/react-notify-pro/main/logo.png)
+![Logo](https://raw.githubusercontent.com/omeryaldirgan/react-notify-pro/main/logo.jpg)
 A lightweight, customizable, and animated notification system for React applications.
 
 ## Features
